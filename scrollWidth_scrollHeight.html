@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body style="width: 2000px;height:1000px;margin: 0">
+
+	  <script type="text/javascript">
+
+	  /*
+        scrollWidth 页面的总宽度包括卷曲的宽度
+        scrollHeight 页面的总高度包括卷曲的高度
+	  */
+	  	 var docWidth=document.documentElement.scrollWidth;
+	  	 var docHeight=document.documentElement.scrollHeight;
+
+	  	 console.log(docWidth);
+	  	 console.log(docHeight);
+	  
+      /*
+         scrollLeft  元素当前滚动离左边的位置
+         scrollTop   元素当前滚动离上边的位置
+      */
+	  	 var oscrollLeft=document.querySelector("body").scrollLeft;  
+	  	 var oscrollTop=document.querySelector("body").scrollTop;
+	  	  alert(oscrollLeft);   
+	  	  alert(oscrollTop);   
+	  </script>
+</body>
+</html>

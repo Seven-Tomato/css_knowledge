@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		html, body {background: #fff;
+			        color: #000;
+		}
+		h3{text-align: center;}
+		
+        .wrap{width: 100%;
+              overflow: hidden;
+              background-color: #aaa;
+              margin-bottom: 20px;
+              padding: 20px 0;
+        }
+        /*问题一*/
+		.box1{padding: 5px;
+			  margin: 5px;
+			  background-color: #eee;
+			  border: 1px solid #bbb;
+			  clear: left;
+			  color: black;
+			  float: left;
+		}
+		/*问题二*/
+		.div1 {width: 100px;}
+		.p1 {margin-right: 1px;}
+		.p1 span{border: 1px solid red;
+				  float: left;
+				  width: 120px;
+				  padding: 5px;
+		}
+		/*问题三*/
+		.div2 {width: 100px;}
+		.p2 {margin-right: 1px;}
+		.p2 span{float: left;
+				 width: 120px;
+		}
+		/*问题四*/
+		.div3 {background-color: #eee;
+			   border: 1px solid #bbb;
+			   padding: 5px;
+        }
+        .div3 span { float: right; }
+	</style>
+</head>
+
+<body>
+<div class="wrap">
+    <h3>问题一：含clear的浮动元素包裹不正确的bug</h3>
+    <div class="box1">
+		这个&lt;div&gt; 包含 float: left 和 clear: left. 与我们通常理解的表现一致，宽度就是文字内容的宽度。
+	</div>
+
+	<div class="box1">
+		这个同样是一个 &lt;div&gt;, 左浮动，同时含有 clear: left  的 &lt;div&gt;. 因为这一段的文字内容很长，所以，按照我们通常的理解，这个 &lt;div&gt; 占据的长度应该有整个 body 这么长。但是，在 Internet Explorer 7 下，事与愿违。 这个具有左浮动，同时含有 clear: left 的 &lt;div&gt; 仅仅占据了部分body的内容区域宽度。---- 我是占位置的文字，我是占位置的文字，我是占位置的文字，我是占位置的文字，我是占位置的文字，我是占位置的文字，我是占位置的文字……
+	</div>
+	<div class="box1">
+		这是第3个具有float: left 和 clear: left 的 &lt;div&gt; . 改变你浏览器的宽度。
+	</div>
+</div>	
+
+
+<div class="wrap">
+    <h3>问题二：浮动元素倒数2个莫名垂直间距bug（超过3浮动元素）</h3>
+	<div class="div1">
+		<p class="p1">
+	        <span>A</span>
+	        <span>B</span>
+	        <span>C</span>
+	        <span>D</span>
+		</p>
+	 </div>  
+</div>	
+
+
+<div class="wrap">
+    <h3>问题三：3个浮动元素最后一个字符重复bug</h3>
+	<div class="div2">
+	    <p class="p2">
+	        <span>A</span>
+	        <span>B</span>
+	        <span>C</span>
+	       
+        </p>
+	</div>  
+</div>	
+
+
+<div class="wrap">
+    <h3>问题四：文本和浮动元素不在一行</h3>
+	<div class="div3">
+		左侧标题
+	    <span>右浮动</span>
+    </div>
+</div>	
+</body>
+</html>
+

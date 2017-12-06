@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title></title>
+	<!-- 
+	    padding不支持负值。
+       block加上padding后原素尺寸受到影响，
+       设置 box-sizing: border-box;后加上padding的元素尺寸不会受到影响。
+       
+       inline元素(非替换的行内元素)加上padding后水平方向上的尺寸受到影响，垂直方向上不受影响
+       但是如果有背景颜色，背景会延伸到垂直方向上。
+	 -->
+	<style type="text/css">
+      /* 对block元素的影响 --*/
+		.box1{width:300px;
+              height: 300px;
+              border:1px solid;
+              /* box-sizing: border-box;*/
+              padding: 50px;
+               margin:10px;
+             
+		}
+
+		/*对inline元素的影响*/
+		.box2{width: 300px;
+			  height: 300px;
+			  border: solid red;
+
+		}
+		p{text-align: center;}
+		.middle{padding: 10px;
+            background-color: red;
+            border:none;
+		}
+	</style>
+</head>
+<body>
+<!-- 对block元素的影响 -->
+      <div class="box1"></div>
+<!-- 对inline元素的影响 -->
+      <div class="box2">
+                       <p>上面</p>
+      	          <p>前面<input class="middle" value="中间" /></span>后面</p>
+      	               <p>下面</p>
+      </div>
+</body>
+</html>

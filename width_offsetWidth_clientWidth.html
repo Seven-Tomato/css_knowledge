@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#box{width: 300px;
+			 height: 300px;
+             padding: 50px;
+             border: 1px solid red;
+             margin:50px;
+		}
+        .color{color:red;}
+
+	</style>
+</head>
+<body>
+      <div id="box">
+      </div>
+      <ul>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li class="color">width是content的宽度并且有单位</li>
+         <li class="color">clientWidth是(不包括滚动条和边框):width+padding</li>
+         <li class="color">offsetWidth是:width+padding+border</li>
+      </ul>
+      <script type="text/javascript">
+      	var box=document.getElementById("box"),
+      	     li_list=document.querySelectorAll("li");
+      	     li_list[0].innerText="width:"+getStyle(box,"width");
+      	     li_list[1].innerText="clientWidth:"+box.clientWidth;
+      	     li_list[2].innerText="offsetWidth:"+box.offsetWidth;
+             
+      	
+
+
+
+      	  /*js获取元素样式值*/
+	   function getStyle(obj, attr) {
+		return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj, false)[attr];
+	}
+      </script>
+</body>
+</html>

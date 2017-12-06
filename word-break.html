@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>word-break自动换行处理</title>
+    <meta charset="utf-8">
+	<style type="text/css">
+		.box1{width: 500px;
+			margin:60px auto;
+            border: 1px solid red;
+		}
+		.box2{width: 500px;
+			margin:60px auto;
+            border: 1px solid red;
+            word-break: break-all;
+		}
+		.box3{width: 500px;
+			margin:60px auto;
+            border: 1px solid red;
+            word-break: keep-all;/*只能在半角空格或连字符（-）处换行*/
+		}
+	</style>
+</head>
+<body>
+     <div class="box1">
+        <p>默认样式</p>
+     	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+     </div>
+     <div class="box2">
+       <p> word-break: break-all;允许在单词内换行</p>
+     	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+     </div>
+     <div class="box3">
+      <p> word-break: keep-all;只能在半角空格或连字符（-）处换行</p>
+     	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamake-loveaaaaaaaaaaaaaaaaa
+     </div>
+</body>
+</html>

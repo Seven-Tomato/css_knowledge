@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>translateZ</title>
+	<!--  
+	    translateZ帮你寻找透视位置
+	    例如：（父元素）透视点的位置在 perspective: 100px;
+	    那么（子元素）translateZ越是接近100px,该元素也会越来越大如果,父辈元素没有类似overflow:hidden的限制的话）translateZ接近100px的时候，子元素就移到了你的眼睛前面
+	 -->
+</head>
+<style type="text/css">
+   .father_box{width: 800px;
+               height: 600px;
+               border: 2px solid #acd;
+               margin:0 auto;
+               perspective: 100px;/*父元素设置100px的透视点*/
+    }
+	.small_box{width: 100px;
+               height: 100px;
+               background-color: #afd;
+               margin:30% auto;
+               /*transform: translateZ(50px);js里默认值是50px*/
+	}
+	#range{width: 70%;}
+</style>
+<body>
+  <div class="father_box">
+  	 <div class="small_box"></div>
+  	 <div style="text-align: center;">
+  	     <p>小盒子距离视点的距离translateZ是<span id="rang_number" style="color: red;"></span>px</p>
+  	     <p>0<input type="range" min="0" max="100" value="50"  id="range">100</p>
+  	 </div>
+  </div>
+
+
+	<script type="text/javascript">
+		var small_box=document.querySelector(".small_box");
+		var range=document.getElementById("range");
+		var range_number=document.getElementById("range_number");
+         small_box.style.transform="translateZ("+range.value+"px)";
+         rang_number.innerText=range.value;
+        range.addEventListener("change",function(){
+                small_box.style.transform="translateZ("+this.value+"px)";
+                rang_number.innerText=this.value;
+        })
+
+	</script>
+</body>
+</html>

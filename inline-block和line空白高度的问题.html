@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.wrap{border: 1px solid; 
+		
+		}
+       
+        .inline_block{border: 1px solid red; 
+        	width: 200px;
+        	height: 200px;
+        	display: inline-block;
+         }
+         span{background-color: red;}
+         a{display: none}
+	</style>
+</head>
+<body>
+          <div class="wrap">
+	          <div class="inline_block"></div>
+	          <div class="inline_block" id="add_box"></div>
+	           <span>x</span>
+          </div>
+          <p>
+             inline-block的基线是正常文档流中最后一个line box的基线
+             这里红色背景的X的基线就是前面两个inline-block元素的基线
+ 
+          </p>
+          <p>
+          <button id="btn">给x前一个inline-block里面添加inline</button>
+          <a href="#">当这个inline-block中有line boxes(行框盒子)就是这里的xxx的行框盒子时这个inline-block的基线就变成了xxx的基线</a></p>
+         <script type="text/javascript">
+         	 var add_box=document.getElementById("add_box"),
+         	      a=document.querySelector("a"),
+         	      btn=document.getElementById("btn");
+         	      span=document.createElement("span"),
+         	      text=document.createTextNode("xxx");
+              btn.onclick=function(){
+              		var ospan=span.appendChild(text);
+         	        add_box.appendChild(ospan);
+         	        a.style.display="block";
+              }
+         
+
+
+         </script>
+</body>
+</html>

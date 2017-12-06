@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>resize元素是否可以被拉伸overflowoverflow 属性规定当内容溢出元素框时发生的事情。</title>
+	<!-- 
+	    resize:
+        none	用户无法调整元素的尺寸。
+		both	用户可调整元素的高度和宽度。
+		horizontal	用户可调整元素的宽度。
+		vertical	用户可调整元素的高度。
+
+        overflow:
+		visible	默认值。内容不会被修剪，会呈现在元素框之外。
+		hidden	内容会被修剪，并且其余内容是不可见的。
+		scroll	内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+		auto	如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
+		inherit	规定应该从父元素继承 overflow 属性的值。
+
+		一起使用才会出现可拉伸的角
+	 -->
+	 <style type="text/css">
+	 	div{border: solid;
+            width: 300px;
+            height: 300px;
+            resize: both;
+            overflow:auto;
+	 	}
+	 </style>
+</head>
+<body>
+        <div></div>
+</body>
+</html>

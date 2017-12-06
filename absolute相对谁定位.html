@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>absolute相对于最近的有定位(position:relative/absolute/fixed)的父集定位</title>
+	<style type="text/css">
+		.father{
+                width: 500px;
+                height: 500px;
+                border:solid;
+                position:relative;
+              
+		}
+		.child{
+			width: 400px;
+			height: 400px;
+			border: red solid;
+			position: absolute;
+
+		}
+		.small_box{
+			width: 200px;
+			height: 200px;
+			border: yellow solid;
+			position: absolute;
+			right: 100px;
+			bottom: 100px;
+			
+		}
+	</style>
+</head>
+<body>
+
+        <div class="father">
+        	<div class="child">
+        		<div class="small_box"></div>
+        	</div>
+        </div>
+</body>
+</html>

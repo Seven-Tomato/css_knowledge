@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<head>
+     <meta charset="utf-8">
+	<title>html的最小化影响原则</title>
+	<!-- 
+         relative会影响层叠堆积关系，所以应该尽量少用。
+         或者换种方法使用
+         这里只给第四个div设置absulate样式让它固定在大盒子的右上角
+         方法一：margin配合使用达到目的。
+         方法二：为第四个div加一个空的father div并设置relative属性。
+	 -->
+	<style type="text/css">
+		.big_box{width: 600px;
+			     height: 600px;
+			     border: 2px solid #adc;
+		}
+		.small_box{width: 100px;
+			       height: 100px;
+			       border: 1px solid ;
+
+                    
+		}
+		/*.sma4{position: absolute;margin:-306px 0px 0 498px;}*/
+		.sma4{position: absolute;right: 0;top:-306px;}
+	</style>
+</head>
+<body>
+      <div class="big_box">
+      	  <div class="small_box sma1">1</div>
+      	  <div class="small_box sma2">2</div>
+      	  <div class="small_box sma3">3</div>
+          <div style="position: relative;">
+      	  	  <div class="small_box sma4">4</div>
+          </div>      
+      </div>
+</body>
+</html>

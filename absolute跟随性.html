@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!-- 
+      当img设置position: absolute
+      父级div中的text-align: center;将不再起作用（父级高度塌陷）
+      解决方法在父集中加一个空格（有内容父集恢复高度，宽度），空格会得到居中
+      图片又跟在空格后面，那么根据absolute元素的跟随性，它会浮在原来的位置上，
+      在通过margin调整位置
+     -->
+    <style type="text/css">
+         div{text-align: center;
+            background-color: yellow;
+         }
+         img{position: absolute;margin-left: -150px}
+         
+       
+        
+    </style>
+    
+</head>
+<body>
+    <div>&nbsp<img src="img/img8.jpg"></div>
+</body>
+</html>

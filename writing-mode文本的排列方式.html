@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>改变文本显示方式</title>
+	<meta charset="utf-8">
+	<!-- 
+	 兼容IE:writing-mode: lr-tb | tb-rl | tb-lr (IE8+);
+     兼容其它浏览器：writing-mode: horizontal-tb | vertical-rl | vertical-lr;
+
+	 -->
+	 <style type="text/css">
+	    .size{width: 400px;
+              height: 400px;
+	    }
+	    div{border: 1px solid;}
+
+
+
+	  .box1{writing-mode:vertical-lr;
+	 		writing-mode:tb-lr;
+	 		text-align: center;
+	 		/*图片垂直居中了，writing-mode将页面默认的水平流改成了垂直流 */
+	 	}
+	 </style>
+</head>
+<body>
+        <div class="box1 size">
+        	<img src="img/img2.jpg" width="200">
+        </div>
+       
+</body>
+</html>

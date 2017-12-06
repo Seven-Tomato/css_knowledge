@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+       为什么一边增加另一边一也会增加高度,是应为一边内容增加content会被撑大,外面的父盒子也被被撑大从而有了这种效果
+	 -->
+    <style type="text/css">
+    	.box{overflow: hidden;
+    		   text-align: center;
+           color: #fff;
+           border:5px solid green;
+    	}
+    	.orange,.green{float: left;
+    		             padding-bottom: 600px;
+    		             margin-bottom: -600px; 
+                     border: solid red;
+    	}
+    	.orange{background-color:orange;width: 49%}
+    	.green{background-color: green;width: 49%}
+
+    </style>
+</head>
+<body >
+   <div class="box">
+   	  <div class="orange">
+   	    <p>黄色</p>
+   	    <p>黄色</p>
+   	    <p>黄色</p>
+   	  </div>
+   	  <div class="green">
+   	  <p>绿色</p>
+   	  </div>
+   </div>
+ 
+ 
+</body>
+</html>

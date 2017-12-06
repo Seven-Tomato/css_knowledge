@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+	BFC（block formatting content）-"块级格式化上下文"
+	BFC元素特性表现原则就是，内部子元素再怎么翻江倒海，翻云覆雨都不会影响外部的元素。
+	触发BFC,常见的如下：
+    float的值不为none。
+	overflow的值为auto,scroll或hidden。
+	display的值为table-cell, table-caption, inline-block中的任何一个。
+	position的值不为relative和static。
+
+	 -->
+	<style type="text/css">
+		body{margin:0;}
+		.box{width: 800px;
+             height: 600px;
+             margin: 0 auto;
+             border: 1px solid red;
+		}
+		.float_img{float: left;}
+	    .right_box{width: 400px;
+	               height:300px;
+	               background-color: yellow;
+	             /*  float:left;触发bfc*/
+	             /*  display: table-cell; 触发bfc*/
+	             /* overflow: hidden; 触发bfc*/
+	           /*     display: inline-block;触发bfc*/
+	   }
+	</style>
+</head>
+<body>
+      <div class="box">
+      	<img class="float_img" src="img/img8.jpg" width="200"/>
+      	<div class="right_box">
+            <img class="right_img" src="img/img3.jpg" width="200"  />
+      </div> 
+    
+      	
+      </div>
+</body>
+</html>

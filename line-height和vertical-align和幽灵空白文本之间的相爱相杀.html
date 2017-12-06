@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	</title>
+	<!-- 
+      line-height和vertical-align和幽灵空白文本之间的相爱相杀
+	 -->
+    <style type="text/css">
+    	*{margin:0;padding:0;}
+    	ul{width:1360px;
+    	   border: 1px solid;
+    	   margin:0 auto; 
+    	   text-align: justify;
+         /* line-height: 0;*//*第一次杀死空白*/
+
+    	}
+    	li{list-style: none;
+    	   display:inline-block;
+
+    	}
+      span{display: inline-block;
+           width: 326px;
+           border: 1px solid red;
+          /* vertical-align:top;*//*第二次杀死空白*/
+      }
+     
+    </style>
+</head>
+<body>
+     <ul>
+      <li><img src="img/img1.jpg"></li>
+      <li><img src="img/img1.jpg"></li>
+      <li><img src="img/img1.jpg"></li>
+      <li><img src="img/img1.jpg"></li>
+      <li><img src="img/img1.jpg"></li>
+      <li><img src="img/img1.jpg"></li>
+      <span ></span>
+      <span ></span>
+      <span ></span>x
+      <span ></span>x
+     </ul>
+   
+    
+</body>
+</html>

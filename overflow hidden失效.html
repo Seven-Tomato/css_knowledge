@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+        绝对定位元素不总是被父级overflow属性剪裁，特别是父级（有overflow属性的）在绝对定位元素及包含块之间的时候。
+
+        这里的包含块：指的是含有position：relative/absolute/fixed声明的父元素，
+        如果没有则是body.
+
+
+
+        如果想要overflow属性生效可以尝试下面的方法：
+        1.父级（有overflow属性的）自身作为包含块（给下面的.box元素添加position）
+        2.父级（有overflow属性的）子元素作为包含块（创建一个子元素并添加position）
+   
+	 -->
+	<style type="text/css">
+		.box{width: 600px;
+             height:200px;
+             background-color: #acd;
+             overflow: hidden;
+            
+		}
+		img{position: absolute;}
+ 
+	</style>
+</head>
+<body>  
+     <div class="box">  
+     	   <img src="img/img1.jpg" width="200">    	  
+     </div>
+     
+</body>
+</html>

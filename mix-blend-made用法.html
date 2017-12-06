@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+        当元素应用了混合模式的时候，默认情况下，其会混合z轴上所有层叠顺序比其低的层叠元素。
+        下面mode不仅仅混合了inner元素
+     
+	 -->
+	<style type="text/css">
+		.box {border: 1px solid }
+        .inner {
+            width: 256px;
+            height: 256px;
+            background: url(img/img4.jpg) no-repeat;  
+
+        }
+        .mode {position: relative;
+               right: -100px;
+        }
+	</style>
+</head>
+<body>
+       <div class="box">
+		    <div class="inner">
+		        <img src="img/img3.jpg" class="mode">
+		    </div>
+      </div>
+       <p>
+       inner的mix-blend-mode:   
+       <select onchange="change(this.value)">
+           <option value="normal">normal正常</option>
+           <option value="multiply">multiply正片叠底</option>
+           <option value="screen">screen滤色</option>
+           <option value="overlay">overlay叠加</option>
+           <option value="darken">darken变暗</option>
+           <option value="lighten">lighten变亮</option>
+           <option value="color-dodge">color-dodge颜色减淡</option>
+           <option value="color-burn">color-burn颜色加深</option>
+           <option value="hard-light">hard-light强光</option>
+           <option value="soft-light">soft-light柔光</option>
+           <option value="difference">difference差值</option>
+           <option value="exclusion">exclusion排除</option>
+           <option value="hue">hue色相</option>
+           <option value="saturation">saturation饱和度</option>
+           <option value="color">color颜色</option>
+           <option value="luminosity">luminosity亮度</option>
+           <option value="initial">initial初始</option>
+           <option value="inherit">inherit继承</option>
+           <option value="unset">unset复位</option>
+          
+       </select>
+       </p>
+      <p><img src="img/max.png"><img src="img/max-blend.png"></p>
+
+      <script type="text/javascript">
+       var mode=document.querySelector(".mode");
+        function change(val){
+             mode.style.mixBlendMode=val;
+        }
+      </script>
+</body>
+</html>

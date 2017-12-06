@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>正切函数tan() Math.tan(val) </title>
+	<!-- 
+       val只能是弧度
+       转换 val=2*Math.PI/360*度数
+	 -->
+</head>
+<body>
+     <script type="text/javascript">
+    /* var img_half_width=200/2;
+     var img_length=9;
+     var deg=360/img_length/2;
+     var val=Math.PI/180*deg;
+     var tan_val=Math.tan(val);
+     var transformZ=img_half_width/tan_val;*/
+
+     /*计算每个图片的transformZ值*/
+      function  transformZ(img_width,img_length){
+         transformZ=(img_width/2)/Math.tan(Math.PI/180*(360/img_length/2))+"px";
+                   return transformZ
+      } 
+     </script>
+</body>
+</html>

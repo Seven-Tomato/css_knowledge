@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>text-stroke文字描边属性</title>
+	<style type="text/css">
+        p{margin:0;position: relative;  font-size: 150px;}
+		    p::before{content: attr(data-text);
+                 position: absolute;
+                 -webkit-text-stroke:10px red;
+                 z-index: -1;
+
+           }
+
+	</style>
+</head>
+<body>
+ <!--  
+    -webkit-text-stroke是居中描边。
+    ontent 属性与 :before 及 :after 伪元素配合使用，来插入生成内容。
+    还可以同时使用:before 及 :after 伪元素实现多重描边效果。
+ -->
+   <p data-text="-webit-text-stroke">-webit-text-stroke</p>
+
+  
+</body>
+</html>

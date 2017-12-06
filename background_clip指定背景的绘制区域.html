@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<!-- 
+	      background-clip: border-box|padding-box|content-box;
+	      border-box	背景被裁剪到边框盒。
+	      padding-box	背景被裁剪到内边距框。
+	      content-box	背景被裁剪到内容框。
+		 -->
+	</head>
+    <style type="text/css">
+    	div{width: 300px;
+            height: 300px;
+            border:30px dotted red;
+            background-color: #acd;
+            padding: 50px;
+    	}
+    </style>
+<body>
+     <div>
+     	裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？裁剪的背景区域变成了？
+     </div>
+
+     <ul>
+		<li><input type="radio" name="clip" onclick="test_demo(this)"  value="border-box" checked="checked" />border-box默认值</li>
+		<li><input type="radio" name="clip"  onclick="test_demo(this)"  value="padding-box" />padding-box</li>
+		<li><input type="radio"  name="clip"  onclick="test_demo(this)"  value="content-box" />content-box</li>
+     </ul>
+
+
+     <script type="text/javascript">
+        var div=document.querySelector("div");
+     	function test_demo(that){
+            div.style.backgroundClip=that.value;         
+     	}
+     </script>
+</body>
+</html>

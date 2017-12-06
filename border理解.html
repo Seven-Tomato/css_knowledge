@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>border的理解</title>
+	<!-- 
+         1.border-width 的默认值是3px;
+           原因是border：double；需要的最小宽度是3px.
+         2.border的dotted(点线)在ie下是圆点 可以实现ie7 ie8下的圆角
+         3.boder-color的默认颜色就是color颜色
+         4.border-color上-右-下-左四个方向的颜色改变可以出现三角形
+	 -->
+	<style type="text/css">
+		.box{width: 400px;
+			 height: 400px;
+			 border-style: dotted; 
+             color: #ccc;
+             border-width: 50px;
+             font-size: 200px;
+             text-align: center;
+             line-height: 400px;
+              transition: color 1s;
+		}
+		.box:hover{
+			 color: red;
+			
+		}
+        
+        .box2{width:100px;
+			  height:0px;
+			  border-style: solid; 
+              border-width:200px; 
+             /* border-radius:200px;*/
+              border-color:red yellow green blue;
+            /*  border-color:red transparent  transparent transparent;*/
+        }
+        .radio{width: 160px;
+        	   height: 160px;
+        	   border: 2px solid transparent;
+             
+        }
+	</style>
+</head>
+<body>
+      <div class="box">+</div>
+      <div class="box2"></div>
+      <input class="radio" type="radio" value="单选"/>
+</body>
+</html>

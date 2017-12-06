@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>需要依赖overflow样式的属性</title>
+	<!-- 
+     1.risize：both(水平垂直拉伸)/horizontal（水平拉伸）/vertical（垂直拉伸）
+     risize对overflow的依赖，当overflow值不为visible时，元素才能被拉伸。
+
+     2text-overflow:ellipsis(文本溢出出现省略号);
+       white-space:nowrap;
+       overflow:hidden;
+       三个一起使用
+
+     3.textarea天生外挂overflow:auto/resize:both;
+	 -->
+	 <style type="text/css">
+	 	.risize_box{height: 200px;
+                    width: 200px;
+                    border:1px solid red;
+                    resize: both;
+                    overflow:hidden;
+	 	}
+	 	.txt_over{width: 100px;
+                  height: 20px;
+                  border:solid red;
+                  text-overflow:ellipsis;
+                  white-space:nowrap;
+                  overflow:hidden;
+                
+	 	}
+	 </style>
+</head>
+<body>
+     <div class="risize_box"></div>
+
+
+
+
+    <p class="txt_over">你好你好你好你 你 你好你好 你好 你好</p>
+
+
+
+
+
+
+
+
+     <textarea id="txt"></textarea>
+
+      <script type="text/javascript">
+      	var otxt=document.getElementById("txt");
+      /*  alert(window.getComputedStyle(p,":after").color);*/
+
+        function getCss(ele){
+          return ele.currentStyle? ele.currentStyle : window.getComputedStyle(ele, null);
+        }
+         alert(getCss(otxt).overflow);
+          alert(getCss(otxt).resize);
+      </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<!-- 
+    发生条件：
+    1 block元素(不包括float和absolute元素) 
+    2.（不考虑writing-mode）只发生在垂直方向上（margin-top/margin-bottom）
+    marign重叠的三种情况：
+    1.相邻的兄弟元素
+    2.父元素和第一个子元素/最后一个子元素
+    3.空block元素
+	 -->
+	<style type="text/css">
+	    body,h3{margin:0;}
+	    h3{text-align: center;
+           border: 1px solid red;
+	    }
+	    .wrap{border: 1px solid ;
+              text-align: center;
+                background-color: #cac0ba
+	    }
+		.box1{height: 40px;
+              border: 1px solid ;
+              margin: 10px 0;
+		}
+	    .box2{height: 40px;
+               border: 1px solid ;
+              
+               margin: 10px 0;
+		}
+
+
+		/*第二种*/
+		.wrap2{text-align: center;
+			   background-color: #cac0ba
+	    }
+		.box3{height: 40px;
+              border: 1px solid ;
+              margin:10px 0;
+        }
+
+
+       /*三种*/
+       .wrap3{background-color: #cac0ba;
+              overflow: hidden;
+       }
+       .box4{margin:10px 0;
+        }
+	</style>
+</head>
+<body>
+      <h3>相邻的兄弟元素垂直方向上margin重叠</h3>
+      <div class="wrap">
+      	<div class="box1">div1 margin: 10px 0;</pre></div>
+      	<div class="box2">div2 margin: 10px 0;</div>
+      </div>
+
+
+       <h3>父元素和第一个子元素/最后一个子元素</h3>
+      <div class="wrap2">
+      	<div class="box3">div1 margin:10px 0;</div>
+      </div>
+
+
+       <h3>空block元素</h3>
+      <div class="wrap3">
+      	<div class="box4"></div>
+      </div>
+</body>
+</html>

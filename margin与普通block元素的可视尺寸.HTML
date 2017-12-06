@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<!-- 
+     改变普通block元素水平方向上的可视尺寸
+     普通block：是指没有float、absolute、fixed、inline-block、table-cell...
+     普通block元素没有设置宽高
+	 -->
+	<style type="text/css">
+	    body{margin:0;}
+		#box{background-color: #aaa;
+             border: 1px solid;
+             padding: 50px;
+             /* float: left;加了影响margin水平拉伸*/
+             /* position: absolute;加了影响margin水平拉伸*/
+             /* position: relative;加了不影响margin水平拉伸*/
+             /*position: fixed;加了影响margin水平拉伸*/
+             /*  display: inline-block;加了影响margin水平拉伸*/
+            /* display: table-cell;加了影响margin水平拉伸*/ 
+		}
+		.box2{text-align: center;
+              padding:20px;
+              background-color: #afc;
+		}
+	</style>
+</head>
+<body>
+
+     <div id="box"></div>
+     <div class="box2">
+         <p id="w" style="color: red"></p>
+         <p id="h"></p>
+	     <p>
+	       margin:<input type="text" id="margin_val" value="0px 0px" />  
+	     </p>
+	     <h3>clientWidth:表示可视宽度（padding+width(content的宽)）;</h3>
+     </div>
+     <script type="text/javascript">
+     var W=document.getElementById("w"),
+     	 H=document.getElementById("h"),
+         box=document.getElementById("box"),
+     	 margin_val=document.getElementById("margin_val");
+
+     	 box_margin();
+     	 margin_val.addEventListener("change",function(){
+     	 	box_margin();
+     	 })
+        function box_margin(){
+            box.style.margin=margin_val.value;
+            W.innerText="clientWidth:"+box.clientWidth;
+            H.innerText="clientHeight:"+box.clientHeight;
+     	 }
+     	 
+
+     </script>
+</body>
+</html>

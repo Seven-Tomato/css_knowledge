@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+       <span>float可以让这个P标签block化</span>
+       <button onclick="no_float()">查看span标签的默认display值</button>
+       <button onclick="add_float()">给span标签添加float属性后查看display值</button>
+</body>
+<script type="text/javascript">
+	  var span=document.querySelector("span"),
+	      btn=document.querySelector("button");
+	      function add_float(){
+	      	 span.style.float="left";
+	      	 alert(window.getComputedStyle(span).display);
+	      }
+
+	       function no_float(){
+	      	 alert(window.getComputedStyle(span).display);
+	      }
+        
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <style type="text/css">
+    	.wrap{width: 800px;
+              height: 600px;
+              margin-left: auto;
+              margin-right: auto;
+              border:solid;
+    	 }
+    	 h3{text-align: center;}
+    
+    	 .big_box{border: 1px solid red;
+                  overflow: auto;
+                  resize: both;
+    	 }
+    	 .content_box{border: 1px solid #add; 
+		    	 	  padding: 20px; 
+    	}
+    	 .p{line-height: 20px;
+		    padding-bottom: 6px;
+		    font-size: 12px;
+		    margin:0;
+		}
+		.clearfix:after{content: "";display: table;clear: both;}
+        .clearfix:{zoom:1;}
+        h5{padding:0 5px;}
+/*第一种方法：图片右浮动改变d位置DOM位置*/
+        .right_img{float: right;}
+    	.left_div{margin-right:120px;
+                  border:1px solid gold; 
+    	}
+/*第二种方法：都左浮动不改变DOM位置*/
+		.left2_div{float: left;
+                   margin-right:120px;
+                   border:1px solid gold;
+		}
+		.right2_img{float: left;
+                    margin-left:-100px;
+		}
+    </style>
+</head>
+<body>
+     <div class="wrap">
+         <h3>方法一：图片float-right,左侧盒子margin-right,dom顺序变了</h3>
+	     <div class="big_box">
+	     	<div class="content_box">
+	     	    <span class="right_img">
+	     			<img src="img/img1.jpg" width="100" />
+	     		</span>
+	     		<div class="left_div">
+	     		    <p class="p">
+	     		    	今日不減肥，先把病治好再說！ 我認真吃完這，燒就會退了吧？！ 我認真吃完這，燒就會退了吧？！ 我認真吃完這，燒就會退了吧？！今日不減肥，先把病治好再說！ 我認真吃完這，燒就會退了吧？！ 我認真吃完這，燒就會退了吧？！ 我認真吃完這，燒就會退了吧？！
+	     		    </p>
+	     			<img src="img/img2.jpg" width="100" />
+	     		</div>
+	     	</div>
+	     </div>
+     
+	     <h3>方法二：图片、盒子都float-left,左侧盒子margin-left负值,dom顺序不变</h3>
+	     <div class="big_box ">
+	        <div class="content_box clearfix">
+	        	<div class="left2_div">
+	        		 <p class="p">
+	     		    	今日不減肥，先把病治好再說！ 我認真吃完這，燒就會退了吧？！ 我認真吃完這，燒就會退了吧？！ 我認真吃完這，燒就會退了吧？！今日不減肥，先把病治好再說！ 我認真吃完這，燒就會退了吧？！ 我認真吃完這，燒就會退了吧？！ 我認真吃完這，燒就會退了吧？！
+	     		    </p>
+	     			<img src="img/img2.jpg" width="100" />
+	        	</div>
+	     	    <div class="right2_img">
+	     		    <img src="img/img1.jpg" width="100" />
+	         	</div>
+	        </div>	     	
+	     </div>
+	     <h5>左侧盒子就是黄色的盒子，dom顺序指的是html中盒子和图片的布局的先后顺序，方法二的content_box加了clearfix清除浮动带来的父元素高度塌陷</h5>
+     </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+           perspective属性(透视，视角)的存在与否决定了你所看到的是2D的还是3D的
+          
+	 -->
+	<style type="text/css">
+	/* perspective放在父亲盒子上的效果*/
+		.father_box{width: 100%;
+             height: 300px;
+             margin:0 auto;
+             border: 2px solid #adf;
+             /* perspective: 500px;加上后才能出现3D效果*/
+             position: relative;
+            transform-style:preserve-3d;
+
+		}
+        .small_box{
+        	width: 100px;
+        	height: 100px;
+          position: absolute;
+          top:100px;
+          transform:  rotateY(45deg);
+           
+        }
+        .box1{
+              left: 100px;
+        }
+        .box2{
+              left: 200px;
+        }
+        .box3{
+              left: 300px;
+        }
+        .box4{
+              left: 400px;
+        }
+        .box5{
+              left: 500px;
+        }
+        .box6{
+              left: 600px;
+        }
+         .box7{
+              left: 700px;
+        }
+         .box8{
+              left: 800px;
+        }
+         .box9{
+              left: 900px;
+        }
+         .box10{
+              left: 1000px;
+        }
+         .box11{
+              left: 1100px;
+        }
+         .box12{
+              left: 1200px;
+        }
+        .range_area{position: absolute;
+        	        width: 100%;
+                    bottom: 0;
+                    text-align: center;
+        }
+   
+	</style>
+</head>
+<body>
+       <div class="father_box" >
+       	   <div class="small_box box1"></div>
+       	   <div class="small_box box2" ></div>
+       	   <div class="small_box box3"></div>
+       	   <div class="small_box box4"></div>
+       	   <div class="small_box box5" ></div>
+       	   <div class="small_box box6"></div>
+       	   <div class="small_box box7"></div>
+           <div class="small_box box8"></div>
+       	   <div class="small_box box9"></div>
+       	   <div class="small_box box10"></div>
+           <div class="small_box box11"></div>
+       	   <div class="small_box box12"></div>
+       	   <div class="range_area">
+       	   <p>
+       	   100 
+       	   <input type="range" id="range_number" min="100" max="1000" step="10" value="500"  /> 1000
+       	   </p>
+       	   <p>
+       	   	外面大盒子上perspective的值是:<span id="now_range" style="color: red"></span>px	
+       	   </p>
+       	   </div>
+
+       </div>
+
+       <script type="text/javascript">
+       	   window.onload=function(){
+       	   	  var father_box=document.querySelector(".father_box");
+       	   	  var range_number=document.getElementById("range_number");
+       	   	  var now_range=document.getElementById("now_range");
+              var small_box=document.querySelectorAll(".small_box");
+       	   	  now_range.innerText=range_number.value;
+       	   	  father_box.style.perspective=range_number.value+"px";
+       	   	  range_number.addEventListener("change",function(){
+       	   	  	   father_box.style.perspective=this.value+"px";
+       	   	  	   now_range.innerText=this.value;
+       	   	  })
+       	   	   
+       	   	  for (var i = 0; i < small_box.length; i++) {
+       	    small_box[i].style.backgroundColor="hsla("+360*Math.random()+",50%,50%,0.75)";
+       	   	  }
+       	   	}
+            
+       </script>
+</body>
+</html>

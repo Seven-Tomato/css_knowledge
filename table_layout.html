@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	    table{table-layout: fixed;}
+	  	.td1{overflow: hidden;
+           white-space: nowrap;
+           text-overflow: ellipsis;        
+        }
+      .td2{ word-break: break-all;}
+	</style>
+</head>
+<body>
+  <h3>table中就算设置了table的宽度，当td中的内容太多时也会被撑开所以要为table先声明固定布局table-layout: fixed;</h3>
+       <table border="1" cellspacing="0" cellpadding="0" width="200">
+      	<tr>
+      		<td >1</td>
+      		<td class="td1">3333333333333333333333333333333333333333333333333333333333333</td>
+      	</tr>
+      	<tr>
+      		<td>1</td>
+      		<td class="td2">22222222222222222222222222222222222222222222222222222222222222222222222222</td>
+      	</tr>
+      </table>
+</body>
+</html>

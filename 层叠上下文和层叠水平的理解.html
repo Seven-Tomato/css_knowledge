@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title></title>
+	<style type="text/css">
+	/*
+       html自带层叠上下文
+       z-index在定位元素上创建了层叠上下文
+
+       所以当.img position: relative;z-index: -1;创建了层叠上下文，
+       根据下图可以知道，img的层叠水平在#box盒子的下面，在html（自带层叠上下文）上面,
+       body也没有层叠上下文所以，body也在img上面。
+
+       那么此页面中元素的层叠水平如下：
+       最下面html(自带层叠上下文)-img(position: relative;z-index: -1;)-body-#box最上面
+
+	*/
+    html{background-color: pink}
+		#box{width:100px;
+          height:300px;
+          background-color:green;
+          border:solid red;
+          position: relative;   
+		 }
+		.img{position: relative;z-index: -1;border: solid blue;padding:20px;background-color: yellow}
+         
+    body{/*background-color: gold;*/} 
+             
+		
+	</style>
+</head>
+<body>
+        <div id="box">
+          <img class="img" src="img/img4.jpg" width="200;">
+        </div> 
+        <img src="img/cdsp.png" width="600">
+        <img src="img/zzz.png" width="300">
+</body>
+</html>

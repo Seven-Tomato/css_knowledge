@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+        除了z-index的定位元素可以生成层叠上下文，下面这些属性也可以使元素生成层叠上下文。
+        不依赖与z-index出现的层叠上下文的层叠顺序和z-index：auto;一个级别
+	 -->
+
+	 <style type="text/css">
+	     body{margin:0;}
+	     .line{height: 100px;text-align: center;line-height: 160px;}
+	     .box{margin:0 auto;}
+	     /*
+            1.父元素（.box1）设置了display: flex;
+              子元素div z-index值不为auto，父元素出现层叠上下文
+	     */
+	 	.box1{width: 250px;
+              height: 100px;
+              background-color: red;
+              display: flex;
+	 	}
+	 	.box1>div{z-index: 1;}
+	 	.box1>div>img{position: relative;z-index: -1;}
+
+	 	/*
+            2.opacity不等于1的,父级（.box2）出现层叠上下文
+	 	*/
+	 .box2{width: 250px;
+           height: 100px;
+           background-color: red;
+           opacity: .5;
+       }
+      .box2>img{position: relative;z-index: -1;}
+
+      /*
+            3.transform不等于none,父级（.box3）出现层叠上下文
+	 	*/
+	 .box3{width: 250px;
+           height: 100px;
+           background-color: red;
+           transform: rotate(10deg);
+       }
+      .box3>img{position: relative;z-index: -1;}
+
+       /*
+            4.mix-blend-mode（混合模式）不等于normal,父级（.box4）出现层叠上下文
+	 	*/
+	 .box4{width: 250px;
+           height: 100px;
+           background-color:red;
+           mix-blend-mode:screen;
+       }
+      .box4>img{position: relative;z-index: -1;}
+
+         /*
+            5.filter(滤镜)不等于none,父级（.box5）出现层叠上下文
+	 	*/
+	 .box5{width: 250px;
+           height: 100px;
+           background-color:red;
+           filter: blur(5px);
+       }
+      .box5>img{position: relative;z-index: -1;}
+
+         /*
+            6.isolation(孤立)：isolate,父级（.box6）出现层叠上下文
+	 	*/
+	 .box6{width: 250px;
+           height: 100px;
+           background-color:red;
+           isolation:isolate;
+       }
+      .box6>img{position: relative;z-index: -1;}
+
+         /*
+            7.position:fixed,父级（.box7）出现层叠上下文
+	 	*/
+	 .box7{width: 250px;
+           height: 100px;
+           background-color:red;
+           position: fixed;
+           top:590px;
+       }
+      .box7>img{position: relative;z-index: -1;}
+        /*
+            8. will-change:transform;,父级（.box8）出现层叠上下文
+	 	*/
+	 .box8{width: 250px;
+           height: 100px;
+           background-color:red;
+           will-change:transform;
+       }
+      .box8>img{position: relative;z-index: -1;}
+
+       /*
+            9. -webkit-overflow-scrolling;出现层叠上下文
+	 	*/
+	 </style>
+</head>
+<body>
+    <div class="box1 box">
+       <div>
+    	  <img  src="img/img1.jpg" width="200">
+       </div>
+    </div>
+<p class="line">-----------------------------1完美分割-----------------------------------</p>
+    <div class="box2 box">  
+    	  <img  src="img/img1.jpg" width="200">
+    </div>
+<p class="line">-----------------------------2完美分割-----------------------------------</p>
+    <div class="box3 box">  
+    	  <img  src="img/img1.jpg" width="200">
+    </div>
+<p class="line">-----------------------------3完美分割-----------------------------------</p>
+   <div class="box4 box">  
+    	  <img  src="img/img1.jpg" width="200">
+    </div>
+<p class="line">-----------------------------4完美分割-----------------------------------</p>
+  <div class="box5 box">  
+    	  <img  src="img/img1.jpg" width="200">
+    </div>
+<p class="line">-----------------------------5完美分割-----------------------------------</p>
+  <div class="box6 box">  
+    	  <img  src="img/img1.jpg" width="200">
+    </div>
+<p class="line">-----------------------------6完美分割-----------------------------------</p>
+
+ <div class="box7 box">  
+    	  <img  src="img/img1.jpg" width="200">
+    </div>
+<p class="line">-----------------------------7完美分割-----------------------------------</p>
+ <div class="box8 box">  
+    	  <img  src="img/img1.jpg" width="200">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>transform-style</title>
+	<!-- 
+        transform-style: flat|preserve-3d;指定嵌套元素是怎样在三维空间中呈现
+        flat为默认值，表示平面的;preserve-3d表示3D透视。
+        一般而言，该声明应用在3D变换的兄弟元素们的父元素上。
+	 -->
+	 <style type="text/css">
+	 	 #box{position: relative;
+			   height: 300px;
+			   width: 600px;
+			   margin:0 auto;
+			   border: 2px solid #acd;
+		}
+
+		#father{
+			padding: 50px;
+			position: absolute;
+			top: 20%;
+			left: 40%;
+			border: 2px solid black;
+			background-color: red;
+			transition: all 3s;
+			
+		/*	transform-style: preserve-3d;*/
+		}
+
+		#child{
+			padding:40px;
+			position: absolute;
+			border: 2px solid black;
+			background-color: yellow;
+			transform: rotateY(60deg);
+		}
+		#box:hover #father{transform: rotateY(180deg);
+
+		}
+	 </style>
+</head>
+<body>
+      <div id="box">
+		  <div id="father">
+		    father
+		  	<div id="child">child</div>
+          </div>  
+      </div>
+     <p style="text-align: center;"><button >给父元素添加transform-style: preserve-3d;属性</button></p>
+     <p style="text-align: center;"><button >给父元素移除transform-style: preserve-3d;属性</button></p>
+       <script type="text/javascript">
+       	  var btn=document.querySelectorAll("button");
+       	  var father=document.getElementById("father");
+       	  btn[0].onclick=function(){
+               father.style.transformStyle="preserve-3d";
+       	  }
+       	  btn[1].onclick=function(){
+                  father.style.transformStyle="flat";
+       	  }
+       </script>
+</body>
+</html>

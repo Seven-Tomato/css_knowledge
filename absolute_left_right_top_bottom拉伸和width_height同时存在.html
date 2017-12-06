@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>left/right拉伸和width/height同时存在</title>
+<!-- 
+    left/right拉伸和width/height同时存在,width/height生效;
+    在设置margin:auto;后图片居垂直居中
+ -->
+	<style>
+		div {position: absolute;
+		     left: 0;
+		     right: 0;
+		     top:0;
+		     bottom: 0;
+		     width: 100px;
+		     height:100px; 
+		     margin:auto;/*加上后垂直居中*/
+		     background-color: #aad;
+		}
+	
+	</style>
+</head>
+     
+<body>
+	    <div></div>
+</body>
+</html>

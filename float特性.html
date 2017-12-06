@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+        1.float和absolute一样具有包裹性和破坏性（父元素高度塌陷）
+        2.float可以block化元素
+        3.float可以去空格
+	 -->
+	<meta charset="utf-8">
+	<style type="text/css">
+		.box1{
+            border:solid;
+
+		}
+        button{float: left;}
+
+        .clearfix:after{content:"";                      
+                        display:table;
+                        clear: both;
+        }
+        .clearfix{zoom:1;}
+
+
+       .box2{height: 100px;
+              background-color: #aaa;
+       }
+	</style>
+</head>
+<body>
+     <div class="box1 clearfix">
+     	 <button>btn1</button>
+     	 <button>btn2</button>
+     	 <button>btn3</button>
+     	 <p>1</p>
+     	 <p>2</p>
+     	 <p>3</p>
+     </div>
+     <div class="box2">
+     	
+     </div>
+     <script type="text/javascript">
+     /*js获取元素样式值*/
+   function getStyle(obj, attr) {
+	return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj, false)[attr];
+}
+		var btn=document.getElementsByClassName("button")[0];
+       alert(getStyle(btn,"display"));
+     </script>
+</body>
+</html>

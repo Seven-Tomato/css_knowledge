@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<style> 
+.div1 {
+	    width: 300px;
+	    height: 100px;
+	    margin:10px;
+	    padding: 10px;
+	    border: 1px solid blue;
+	    box-sizing: border-box;
+}
+
+.div2 {
+    width: 300px;
+    height: 100px;    
+    padding: 45px;
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+<!-- 
+width(宽) + padding(内边距) + border(边框) = 元素实际宽度
+height(高) + padding(内边距) + border(边框) = 元素实际高度
+这就意味着我们在设置元素的 width/height 时，元素真实展示的高度与宽度会更大
+
+如果在元素上设置了 box-sizing: border-box; 则 padding(内边距) 和 border(边框) 也包含在 width 和 height 中
+ -->
+<div class="div1">第一个DIV</div>
+<br>
+<div class="div2">第二个DIV</div>
+<script type="text/javascript">
+	alert(document.querySelector(".div1").offsetWidth)
+</script>
+</body>
+</html>

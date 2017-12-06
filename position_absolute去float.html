@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+     当float和absulate同时存在时，float失效
+
+     yellow开始float:right当添加absolute后float:right失效
+	 -->
+	 <style type="text/css">
+	 	.big_box{width: 600px;
+	 		     height: 600px;
+	 		     border: 1px solid #aec;
+	 		     position: absolute;
+	 		     left: 50%;
+	 		     top: 50%;
+	 		     transform: translate(-50%,-50%);
+
+
+	 	}
+	 
+	 	.red{background-color: red;
+	 		 width: 100px;
+	 		 height: 100px;
+    display: inline-block;
+	 	}
+	 	.yellow{background-color: yellow;
+	 		    width: 120px;
+	 		    height: 120px;
+                /*float: right;*/
+            position: absolute;
+	 	display: inline-block;	    
+	 	}
+	 	.blue{background-color: blue;
+              width: 140px;
+	 		  height: 140px;
+	 		  display: inline-block;
+	 	display: inline-block;	  
+	 	}
+	 </style>
+</head>
+<body>
+    <div class="big_box">
+    	<div class="red"></div>
+    	<div class="yellow"></div>
+    	<div class="blue"></div>
+    </div>
+</body>
+</html>

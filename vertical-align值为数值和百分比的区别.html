@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+   
+		.box1,.box2{width: 600px;
+                    height: 450px;
+                    margin:0 auto;
+                    border:solid;
+                  
+
+		}
+  
+    h4{  text-align: center;}
+    .text_box1,.text_box2{border: 1px solid red;}
+    #span_val1,#span_val2{color: red;margin:0 20px;}
+    .reselt{color: red;}
+	</style>
+</head>
+<body>
+      <div class="box1">
+      	<h4>vertical-align的值为数值(设置文字的)</h4>
+      	<div class="text_box1">
+      		<img src="img/img4.jpg">
+          <span id="span1">xxx你好啊!</span>         
+      	</div>
+        <p>vertical-align:
+             <select>
+               <option>baseline</option>
+               <option>2px</option>
+               <option>-2px</option>
+               <option>2em</option>
+               <option>-2em</option>
+             </select>
+        </p>
+        <p class="reselt">vertical-align的值为数值时，正负值是基于baseline上下偏移的</p>
+      </div>
+
+
+
+      <div class="box2">
+      	<h4>vertical-align的值为百分比(设置文字的)</h4>
+          <div class="text_box2">
+          <img src="img/img4.jpg">
+           <span id="span2">xxx你好啊！</span>
+        </div>
+         <p>vertical-align:<span id="span_val1"></span> 
+            -50%<input id="range1" type="range" min="-50" max="50" step="1" value="0" onchange="range1change(this.value)" />50%
+            
+        </p>
+        <p>容器的line-height: <span id="span_val2"></span>
+            0px<input id="range2" type="range" min="0" max="50" step="1" value="0" onchange="range2change(this.value)" />50px
+            
+        </p>
+         <p class="reselt">vertical-align的值为百分比时（想要百分比值生效），前提是父容器设置line-height值</p>
+      </div>
+</body>
+<script type="text/javascript">
+/*vertical-align的值为数值*/
+      var span1=document.getElementById("span1"),
+        
+          options=document.querySelectorAll("option"),
+          select=document.querySelector("select");
+          select.onchange=function(){
+            span1.style.verticalAlign=this.value;
+          }
+/*vertical-align的值为百分比*/    
+      var span2=document.getElementById("span2"),
+          text_box2=document.querySelector(".text_box2");
+          range1=document.getElementById("range1"),
+          range2=document.getElementById("range2"),
+          span_val1=document.getElementById("span_val1"),
+          span_val2=document.getElementById("span_val2");
+
+            span2.style.verticalAlign=range1.value+"%";
+            span_val1.innerText=range1.value+"%";
+         function range1change(val){
+            span2.style.verticalAlign=val+"%";
+            span_val1.innerText=val+"%";
+         }
+           text_box2.style.lineHeight=range2.value+"px";
+           span_val2.innerText=range2.value+"px";
+        function range2change(val){
+           text_box2.style.lineHeight=val+"px";
+           span_val2.innerText=val+"px";
+         }
+</script>
+</html>

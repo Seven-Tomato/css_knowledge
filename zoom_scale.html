@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>zoom和scale的区别</title>
+	<meta charset="utf-8">
+	<style>
+	    body{margin: 0;}
+	    .box{width:200px;height:100px;
+			border:1px solid #CCC;
+			margin-top:10px;
+		}
+		#left_box{position: absolute;
+				  left: 25%;
+		}
+		#right_box{position: absolute;
+				   left: 50%;
+		}
+		span {display:inline-block;
+			  height:100px;
+			  width:200px;
+			  background:orange;	  
+		}
+		h4{width: 800px;
+           
+           position: absolute;
+           top:500px;
+           left: 300px;
+		}
+     </style>
+</head>
+<body>
+    <div id="left_box">
+    <h3>初始状态：<br/><br/><br/><br/></h3>
+		<div class="box">
+		  <span></span>
+		</div>
+		<div class="box">
+		  <span ></span>
+		</div>
+		<div class="box">
+		  <span ></span>
+		</div>
+    </div>
+
+
+    <div id="right_box">
+     <h3>缩小后的状态:<br/>scale(0.5)<br/> origin:0% 0%;scale(0.5)<br/> zoom:0.5</h3>
+		<div class="box">
+		  
+		  <span  style="transform:scale(0.5);"></span>
+		</div>
+		<div class="box">
+		 
+		  <span style="transform-origin:0% 0%;top left;transform:scale(0.5);"></span>
+		</div>
+		<div class="box">
+		
+		  <span style="zoom:0.5;"></span>
+        </div> 
+    </div>  
+    <h4>
+       总结：<br/>
+       scale()是以原图形中心为基点缩放，transform-origin可以改变它的基点位置。<br/>
+       zoom是以左上角为基点缩放<br/>
+    </h3> 
+</body>
+</html>
