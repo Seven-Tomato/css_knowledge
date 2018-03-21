@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	    html,body{height: 100%;}
+		body{margin:0;height: 100%;}
+		.left,.right{width: 200px;
+			         height: 100%;
+			         background-color: #acc;
+			     }
+		.left{float: left;}
+		.right{float: right;}
+		.main{height: 100%;
+			  margin:0 210px;
+			  background-color: red;
+		}
+		
+	</style>
+</head>
+<body>
+ 
+       <div class="left">left</div>
+       <div class="right">right</div>   
+       <div class="main">main</div> 
+       <!-- 
+         此方法代码最简单。应用了标签浮动跟随的特性。左栏左浮动，右栏右浮动，
+         主体main直接放后面，就实现了自适应。
+         
+         这里三个div标签的顺序的关键是要把主体div放在最后，左右两栏div顺序任意。
+         优点：代码足够简洁与高效
+         不足：中间主体main不能设置clear:both属性。如果要使用此方法，需避免明显的clear样式。
+        -->
+</body>
+</html>

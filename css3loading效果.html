@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		dl{width: 600px;height: 400px;position: absolute;left: 0;right: 0;top:0;bottom: 0;margin:auto;}
+		dd{height: 200px; width: 30px;background-color:#000;float: left;}
+      /*  @keyframes shrink{
+        	0%{transform: scaleY(.2)}
+        	50%{transform: scaleY(1)}
+        	100%{transform: scaleY(.2)}
+        }
+		dd:nth-child(1){
+			animation: shrink 1s infinite ;
+		}
+		dd:nth-child(2){
+			animation: shrink 1s infinite -.1s;
+		}
+		dd:nth-child(3){
+			animation: shrink 1s infinite -.2s;
+		}
+		dd:nth-child(4){
+			animation: shrink 1s infinite -.3s;
+		}
+		dd:nth-child(5){
+			animation: shrink 1s infinite -.4s;
+		}
+		dd:nth-child(6){
+			animation: shrink 1s infinite -.5s;
+		}*/
+        
+
+/*将上面的代码放在http://autoprefixer.github.io/上自动生成css的兼容写法*/
+
+         @-webkit-keyframes shrink{
+        	0%{-webkit-transform: scaleY(.2);transform: scaleY(.2)}
+        	50%{-webkit-transform: scaleY(1);transform: scaleY(1)}
+        	100%{-webkit-transform: scaleY(.2);transform: scaleY(.2)}
+        }
+		@keyframes shrink{
+        	0%{-webkit-transform: scaleY(.2);transform: scaleY(.2)}
+        	50%{-webkit-transform: scaleY(1);transform: scaleY(1)}
+        	100%{-webkit-transform: scaleY(.2);transform: scaleY(.2)}
+        }
+		dd:nth-child(1){
+			-webkit-animation: shrink 1s infinite ;
+			        animation: shrink 1s infinite ;
+		}
+		dd:nth-child(2){
+			-webkit-animation: shrink 1s infinite -.1s;
+			        animation: shrink 1s infinite -.1s;
+		}
+		dd:nth-child(3){
+			-webkit-animation: shrink 1s infinite -.2s;
+			        animation: shrink 1s infinite -.2s;
+		}
+		dd:nth-child(4){
+			-webkit-animation: shrink 1s infinite -.3s;
+			        animation: shrink 1s infinite -.3s;
+		}
+		dd:nth-child(5){
+			-webkit-animation: shrink 1s infinite -.4s;
+			        animation: shrink 1s infinite -.4s;
+		}
+		dd:nth-child(6){
+			-webkit-animation: shrink 1s infinite -.5s;
+			        animation: shrink 1s infinite -.5s;
+		}
+	</style>
+</head>
+<body>
+      	<dl>
+      	  <dd></dd>
+      	  <dd></dd>
+      	  <dd></dd>
+      	  <dd></dd>
+      	  <dd></dd>
+      	  <dd></dd>
+      	</dl> 
+</body>
+</html>

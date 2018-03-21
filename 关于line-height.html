@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+     line-height:26px; 表示行高为26个像素
+     line-heigth:120%;表示行高为当前字体大小的120%
+     line-height:2.6em; 表示行高为当前字体大小的2.6倍
+	 -->
+	  <style>
+	   .b{background: #999}
+       .box1{font-size: 20px;line-height: normal;}/*line-height: normal约等于130%*/
+       .box2{font-size: 20px;line-height: 100%;}
+       .box3{font-size: 20px;line-height: 200%;}
+       .box4{font-size: 20px;line-height: 1;}
+       .box5{font-size: 20px;line-height: 2;}
+       /*父line-height值对子元素line-height的影响*/
+      .percent_box{font-size: 20px;line-height: 100%;}
+      .percent_box_child{font-size: 32px;}
+      .number_box{font-size: 20px;line-height: 1;}
+      .number_box_child{font-size: 32px;}
+     </style>
+</head>
+<body>
+    
+
+<div class="box1 b">
+   行高测试font-size: 20px;line-height: normal;行间距为20*130%（normal）=26
+</div>
+
+<br/>
+
+<div class="box2 b">
+    行高测试font-size: 20px;line-height: 100%;行间距为20*100%=20
+</div>
+<br/>
+
+<div class="box3 b">
+    行高测试font-size: 20px;line-height:200%;行间距为20*200%=40;
+</div>
+<br/>
+<div class="box4 b">
+    行高测试font-size: 20px;line-height:1;行间距为20*1=20
+</div>
+<br/>
+<div class="box5 b">
+    行高测试font-size: 20px;line-height:2;行间距为20*2=40
+</div>
+<h4>line-height值为百分比和纯数字对子元素的影响</h4>
+<div class="percent_box">
+	<div class="percent_box_child b">percent_box_child父级font-size: 20px;line-height: 100%;</div>
+</div>
+<br>
+<div class="number_box">
+	<div class="number_box_child b">number_box_child父级font-size: 20px;line-height: 1;</div>
+</div>
+<dl>
+<dd>1：line-height的高度受font-size的大小影响</dd>
+<dd>2：真实行间距为（字体大小*当前设置的line-height的值）</dd>
+<dd>3：父级line-height的值为带单位的值（百分比、em、 不包含px），（不管子元素字体大小多小）子元素会继承父级的计算高度（即：父line-height*百分比/em的乘积）</dd>
+<dd>4：父级line-height的值为不带单位的值（纯数字），子元素会继承父级的line-height（而不是计算高度的）子元素的计算高度=子元素字体大小*继承父级的line-height</dd>
+</dl>
+<dd>
+   总结：<br>父级line-height值为带单位的值（不包含px）那么子集行高就确定了<br>
+             父级line-height值为纯数字，子集行高=子集字体大小*继承父级的行高
+
+</dd>
+</dl>
+</body>
+</html>

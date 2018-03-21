@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.masked{
+		     background:url(http://www.zhangxinxu.com/study/image/paint.png);
+		    -webkit-text-fill-color:transparent;
+		    -webkit-background-clip:text;
+		    -webkit-animation-name:masked-animation;
+		    -webkit-animation-duration:40s;
+		    -webkit-animation-iteration-count:infinite;
+		    -webkit-animation-timing-function:linear;
+		    color:#fff;
+		}
+		@-webkit-keyframes masked-animation {
+		    0% {background-position:left bottom;}
+		    100% {background-position:right bottom;}
+		}
+	</style>
+</head>
+<body>
+       <h1 class="masked">这是一段文字</h1>
+</body>
+</html>

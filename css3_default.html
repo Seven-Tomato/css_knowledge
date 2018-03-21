@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+         CSS3 :default伪类选择器只能作用在表单元素上，表示默认状态的表单元素。
+         CSS3 :default伪类选择器作用设计的作用是让用户在选择一组数据的时候，依然知道默认选项是什么，否则其他选项一多，选着选着就不知道默认提供的是哪个了，算是一种体验增强策略。作用不是很强烈，但是关键时刻却很有用。
+         如果要:default伪类起作用须要selected为true。
+         同样的，对于单复选框，checked值也要是true。
+	 -->
+	<style type="text/css">
+		 option:default {
+             color: red;
+         }
+         select{width: 300px;margin:0 auto;display: block;}
+
+
+
+              
+	</style>
+</head>
+<body>
+        <select multiple size="4">
+        	<option selected>1</option>
+        	<option>2</option>
+        	<option>3</option>
+        	<option>4</option>
+        	<option>5</option>
+        	<option>6</option>
+        	<option>7</option>
+        	<option>8</option>
+        </select>
+</body>
+</html>

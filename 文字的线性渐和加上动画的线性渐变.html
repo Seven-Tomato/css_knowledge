@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+      background-image:-webkit-linear-gradient(left, #fff,#000,red,blue,yellow 90%);这里的百分90%表示
+     当前颜色的位置，yellow在这段的90%的位置显示
+	 -->
+	<!-- 
+        animation_div如果想要使用animation动画,由于animation动画不支持渐变属性,所以h1文字的背景需要一张图片，
+        animation支持background-position属性，这样就可以通过改变背位置来完成动态的文字渐变效果。
+	 -->
+	<style type="text/css">
+	/*1.纯渐变文字*/
+    .no_animation_div h1{
+	     font-size: 45px;
+	     -webkit-background-clip:text;
+	     -webkit-text-fill-color:transparent;
+ background-image:-webkit-linear-gradient(left,red,orange,yellow,blue,yellow,orange,red,orange,yellow,blue,yellow,orange,red);
+	  }	
+   /*2.加动画的渐变文字*/
+	.animation_div h1{
+	     font-size: 45px;
+	     -webkit-background-clip:text;
+	     -webkit-text-fill-color:transparent;
+	   /*background-image:-webkit-linear-gradient(left,red,orange,yellow,blue,yellow,orange,red,orange,yellow,blue,yellow,orange,red);*/
+	     background-image: url(img/bbc.png) ;
+         background-size: 200% 100%;
+	    animation: mask 5s linear infinite;
+	 
+	  }	
+
+
+	  @keyframes mask
+	  {
+	        0% {background-position:0% }
+	        100% {background-position:-100% }
+	  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .demo {border:1px solid #000;
+   	      text-align: center;
+          line-height: 200px;
+   	      font-size: 80px;
+         
+           font-size: 45px;
+	     -webkit-background-clip:text;
+	     -webkit-text-fill-color:transparent;
+         background-image:-webkit-linear-gradient(left,red,orange,yellow,blue,yellow,orange,red,orange,yellow,blue,yellow,orange,red);
+         background-size: 200% 100%;
+       
+   }
+ 
+	</style>
+</head>
+<body>
+
+     <div class="no_animation_div">
+      	<h1>
+      	  线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向
+        </h1>
+      </div>
+
+
+
+      <div class="animation_div">
+      	<h1>
+      	 线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向
+        </h1>
+      </div>
+
+
+
+
+
+
+
+
+
+      <div class="demo">	
+         文字渐变实现原理 
+      </div>
+      <p style="text-align: center;">0%<input type="range" max="100" min="-100" value='0' oninput='change(this.value)'/>100%</p>
+      <script type="text/javascript">
+      	 let odiv=document.querySelector('.demo');
+        function change(iptVal){
+              odiv.style.backgroundPosition=iptVal+'%';
+              console.log(iptVal);
+        }
+      </script>
+      <p>
+         <span style='color:red;'>注意：</span>
+         <ul>
+         	<li>-webkit-text-fill-color:transparent;将文本颜色设置为透明权重大于color设置的颜色</li>
+         	<li>-webkit-background-clip:text;剪裁掉除文字之外的背景</li>
+         	<li>background-image 设置背景图片或者渐变色彩（注意颜色模式为1234321234321）</li>
+         	<li style='color:red;'>
+         	    background-size:200% 100%; 设置背景图片的宽度为容器的2倍，这样才能使用background-position来水平滑动图片
+         	</li>
+         	<li>background-position 调整水平滑动的位置（相对于父容器）</li>
+         	<li>background-image:-webkit-linear-gradient(渐变方向，颜色，，)注意模式如：1234321234321</li>
+         </ul>
+      </p>
+     
+</body>
+</html>
